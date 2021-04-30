@@ -61,7 +61,7 @@ public class Event<T> {
 
     /**
      * 有个apply方法，所以要指定apply方法，可以用一个函数引过去
-     *
+     *  monad 思想要保证自函子，讲this.data 的包装品，映射到另一种Event < ?>
      */
     <B> Event<?> map(FN<T,B> f){
         return new Event<B>(f.apply(this.data));
