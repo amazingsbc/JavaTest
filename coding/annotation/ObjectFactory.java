@@ -11,7 +11,7 @@ public class ObjectFactory {
     public static <T> T newInstance(Class<T> clazz) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
         //拿到反射，runtime时候的才能拿到
-        var annotations = clzz.getAnnotations();
+        var annotations = clazz.getAnnotations();
 
         var aspects = new LinkedList<IAspect>();
         for(var annotation: annotations){
